@@ -7,6 +7,7 @@ import TechJourney from './components/TechJourney';
 import Projects from './components/Projects';
 import Experience from './components/Experience';
 import Education from './components/Education';
+import Certificates from './components/Certificates';
 import Blog from './components/Blog';
 import Contact from './components/Contact';
 import QuizModal from './components/QuizModal';
@@ -62,7 +63,7 @@ function App() {
               Portfolio
             </div>
             <div className="hidden md:flex space-x-8">
-              {['About', 'Skills', 'Projects', 'Experience', 'Education', 'Memory Wall', 'Blog', 'Contact'].map((item) => (
+              {['About', 'Skills', 'Projects', 'Experience', 'Education', 'Certificates', 'Blog', 'Contact'].map((item) => (
                 <a
                   key={item}
                   href={`#${item.toLowerCase().replace(' ', '-')}`}
@@ -94,6 +95,7 @@ function App() {
         <Projects />
         <Experience />
         <Education />
+        <Certificates />
         <Blog />
         <Contact />
       </main>
@@ -137,7 +139,7 @@ function App() {
                 Quick Links
               </h4>
               <ul className="space-y-2">
-                {['About', 'Skills', 'Projects', 'Experience'].map((item) => (
+                {['About', 'Skills', 'Projects', 'Certificates'].map((item) => (
                   <li key={item}>
                     <a
                       href={`#${item.toLowerCase()}`}
