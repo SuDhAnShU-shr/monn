@@ -9,7 +9,6 @@ import Experience from './components/Experience';
 import Education from './components/Education';
 import Certificates from './components/Certificates';
 import MemoryWall from './components/MemoryWall';
-import Blog from './components/Blog';
 import Contact from './components/Contact';
 import QuizModal from './components/QuizModal';
 
@@ -44,7 +43,7 @@ function App() {
 
   const navItems = [
     'About', 'Skills', 'Tech Journey', 'Projects', 'Experience', 
-    'Education', 'Certificates', 'Memory Wall', 'Blog', 'Contact'
+    'Education', 'Certificates', 'Memory Wall', 'Contact'
   ];
 
   return (
@@ -136,7 +135,6 @@ function App() {
         <Education />
         <Certificates />
         <MemoryWall />
-        <Blog />
         <Contact />
       </main>
 

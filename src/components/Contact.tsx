@@ -23,6 +23,9 @@ const Contact = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [scheduleStatus, setScheduleStatus] = useState<'idle' | 'success'>('idle');
+  const [newsletterStatus, setNewsletterStatus] = useState<'idle' | 'success'>('idle');
+  const [newsletterEmail, setNewsletterEmail] = useState('');
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -49,6 +52,20 @@ const Contact = () => {
     }
   };
 
+  const handleScheduleCall = () => {
+    setScheduleStatus('success');
+    setTimeout(() => setScheduleStatus('idle'), 5000);
+  };
+
+  const handleNewsletterSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (newsletterEmail.trim()) {
+      setNewsletterStatus('success');
+      setNewsletterEmail('');
+      setTimeout(() => setNewsletterStatus('idle'), 5000);
+    }
+  };
+
   const contactInfo = [
     {
       icon: <Mail className="w-6 h-6" />,
@@ -60,8 +77,8 @@ const Contact = () => {
     {
       icon: <Phone className="w-6 h-6" />,
       title: 'Phone',
-      details: '+91 98765 43210',
-      action: 'tel:+919876543210',
+      details: '+91 7976208604',
+      action: 'tel:+917976208604',
       color: 'green'
     },
     {
@@ -109,7 +126,7 @@ const Contact = () => {
       title: 'Schedule a Call',
       description: 'Book a 30-minute video call to discuss opportunities',
       icon: <Calendar className="w-6 h-6" />,
-      action: '#',
+      action: 'schedule-call',
       buttonText: 'Schedule Now',
       color: 'blue'
     },
@@ -356,12 +373,28 @@ const Contact = () => {
                           <p className="text-gray-600 dark:text-gray-400 text-sm mb-3">
                             {action.description}
                           </p>
-                          <a
-                            href={action.action}
-                            className={`inline-flex items-center px-3 py-1 ${colorClasses.button} text-white text-sm rounded-md transition-colors duration-200`}
-                          >
-                            {action.buttonText}
-                          </a>
+                          {action.action === 'schedule-call' ? (
+                            <div>
+                              <button
+                                onClick={handleScheduleCall}
+                                className={`inline-flex items-center px-3 py-1 ${colorClasses.button} text-white text-sm rounded-md transition-colors duration-200 mb-2`}
+                              >
+                                {action.buttonText}
+                              </button>
+                              {scheduleStatus === 'success' && (
+                                <div className="text-sm text-green-600 dark:text-green-400 mt-2">
+                                  📞 Please call us at +91 7976208604 to schedule your appointment!
+                                </div>
+                              )}
+                            </div>
+                          ) : (
+                            <a
+                              href={action.action}
+                              className={`inline-flex items-center px-3 py-1 ${colorClasses.button} text-white text-sm rounded-md transition-colors duration-200`}
+                            >
+                              {action.buttonText}
+                            </a>
+                          )}
                         </div>
                       </div>
                     </div>
@@ -395,16 +428,29 @@ const Contact = () => {
                         <h4 className="font-semibold text-gray-900 dark:text-white">
                           {social.name}
                         </h4>
-                        <p className="text-gray-600 dark:text-gray-400 text-sm">
-                          {social.username}
-                        </p>
-                      </div>
-                    </a>
-                  );
-                })}
-              </div>
+          <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+            <input
+              type="email"
+              placeholder="Enter your email"
+              value={newsletterEmail}
+              onChange={(e) => setNewsletterEmail(e.target.value)}
+              required
+              className="flex-1 px-4 py-3 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900 dark:text-white"
+            />
+            <button 
+              type="submit"
+              className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors duration-200"
+            >
+              Subscribe
+            </button>
+          </form>
+          {newsletterStatus === 'success' && (
+            <div className="mt-4 p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg text-center">
+              <p className="text-green-700 dark:text-green-300">
+                ✅ Thank you for subscribing! Updates will be sent to aahansharma2005@gmail.com
+              </p>
             </div>
-          </div>
+          )}
         </div>
       </div>
     </section>

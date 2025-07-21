@@ -46,28 +46,28 @@ const Education = () => {
     {
       title: 'Coding Club Member',
       role: 'Active Participant',
-      duration: '2022 - Present',
+      duration: '2024 - Present',
       description: 'Regular participant in weekly coding contests and workshops',
       icon: <Code className="w-5 h-5" />
     },
     {
       title: 'Hackathon Team Lead',
       role: 'Team Captain',
-      duration: '2023 - Present',
+      duration: '2024 - Present',
       description: 'Led multiple teams in university and inter-college hackathons',
       icon: <Trophy className="w-5 h-5" />
     },
     {
       title: 'Tech Society Volunteer',
       role: 'Event Organizer',
-      duration: '2023 - Present',
+      duration: '2024 - Present',
       description: 'Organized tech talks, workshops, and coding competitions',
       icon: <Users className="w-5 h-5" />
     },
     {
       title: 'Peer Tutor',
       role: 'Programming Mentor',
-      duration: '2023 - Present',
+      duration: '2024 - Present',
       description: 'Mentoring junior students in programming and web development',
       icon: <BookOpen className="w-5 h-5" />
     }

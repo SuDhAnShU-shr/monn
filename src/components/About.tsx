@@ -4,9 +4,9 @@ import { Calendar, MapPin, Heart, Code, Coffee, Music, Target, Zap } from 'lucid
 const About = () => {
   const timeline = [
     {
-      year: '2023',
-      title: 'Started Computer Science Journey',
-      description: 'Enrolled in CSE program and discovered passion for coding',
+      year: '2024',
+      title: 'Started BTech Journey',
+      description: 'BTech journey started in 2024 - Enrolled in CSE program and discovered passion for coding',
       color: 'from-indigo-500 to-purple-500'
     },
     {
