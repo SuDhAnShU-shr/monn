@@ -428,29 +428,50 @@ const Contact = () => {
                         <h4 className="font-semibold text-gray-900 dark:text-white">
                           {social.name}
                         </h4>
-          <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              value={newsletterEmail}
-              onChange={(e) => setNewsletterEmail(e.target.value)}
-              required
-              className="flex-1 px-4 py-3 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900 dark:text-white"
-            />
-            <button 
-              type="submit"
-              className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors duration-200"
-            >
-              Subscribe
-            </button>
-          </form>
-          {newsletterStatus === 'success' && (
-            <div className="mt-4 p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg text-center">
-              <p className="text-green-700 dark:text-green-300">
-                ✅ Thank you for subscribing! Updates will be sent to aahansharma2005@gmail.com
-              </p>
+                        <p className={`${colorClasses.text} text-sm`}>
+                          {social.username}
+                        </p>
+                      </div>
+                    </a>
+                  );
+                })}
+              </div>
             </div>
-          )}
+            
+            {/* Newsletter Signup */}
+            <div className="bg-gray-50 dark:bg-gray-800 rounded-2xl p-6">
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
+                Stay Updated
+              </h3>
+              <p className="text-gray-600 dark:text-gray-400 mb-6">
+                Subscribe to get updates about my latest projects and blog posts.
+              </p>
+              
+              <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  value={newsletterEmail}
+                  onChange={(e) => setNewsletterEmail(e.target.value)}
+                  required
+                  className="flex-1 px-4 py-3 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900 dark:text-white"
+                />
+                <button 
+                  type="submit"
+                  className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors duration-200"
+                >
+                  Subscribe
+                </button>
+              </form>
+              {newsletterStatus === 'success' && (
+                <div className="mt-4 p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg text-center">
+                  <p className="text-green-700 dark:text-green-300">
+                    ✅ Thank you for subscribing! Updates will be sent to aahansharma2005@gmail.com
+                  </p>
+                </div>
+              )}
+            </div>
+          </div>
         </div>
       </div>
     </section>
