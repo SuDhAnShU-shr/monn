@@ -1,5 +1,5 @@
 import React from 'react';
-import { Github, Linkedin, Mail, Download, ChevronDown } from 'lucide-react';
+import { Github, Linkedin, Mail, Download, ChevronDown, Code, Sparkles } from 'lucide-react';
 
 const Hero = () => {
   const scrollToAbout = () => {
@@ -7,58 +7,56 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-900 dark:to-gray-800 overflow-hidden">
-      {/* Background Animation */}
+    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 via-white to-gray-50 dark:from-gray-900 dark:via-gray-900 dark:to-slate-900 overflow-hidden">
+      {/* Background Elements */}
       <div className="absolute inset-0">
-        <div className="absolute top-20 left-20 w-72 h-72 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
-        <div className="absolute top-40 right-20 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
-        <div className="absolute -bottom-8 left-40 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
+        <div className="absolute top-20 left-20 w-96 h-96 bg-gradient-to-r from-indigo-200/30 to-purple-200/30 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-20 w-96 h-96 bg-gradient-to-r from-cyan-200/30 to-blue-200/30 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-violet-100/20 to-indigo-100/20 rounded-full blur-3xl"></div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
         <div className="text-center">
-          {/* Profile Image */}
-          <div className="mb-8 relative">
-            <div className="w-40 h-40 mx-auto rounded-full bg-gradient-to-r from-blue-400 to-purple-500 p-1 animate-pulse-slow">
-              <div className="w-full h-full rounded-full bg-white dark:bg-gray-800 flex items-center justify-center">
-                <img
-                  src="https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg?auto=compress&cs=tinysrgb&w=400"
-                  alt="Profile"
-                  className="w-36 h-36 rounded-full object-cover"
-                />
-              </div>
-            </div>
+          {/* Icon Badge */}
+          <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-2xl mb-8 shadow-lg shadow-indigo-500/25">
+            <Code className="w-8 h-8 text-white" />
           </div>
 
           {/* Main Content */}
-          <h1 className="text-5xl md:text-7xl font-bold text-gray-900 dark:text-white mb-6 animate-fade-in">
-            Sudhanshu
-          </h1>
-          
-          <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 animate-fade-in animation-delay-200">
-            Student Developer | Tech Enthusiast
-          </p>
+          <div className="space-y-6 mb-12">
+            <h1 className="text-6xl md:text-8xl font-black bg-gradient-to-r from-gray-900 via-indigo-900 to-purple-900 dark:from-white dark:via-indigo-100 dark:to-purple-100 bg-clip-text text-transparent leading-tight">
+              Sudhanshu
+            </h1>
+            
+            <div className="flex items-center justify-center space-x-2 text-xl md:text-2xl text-gray-600 dark:text-gray-300">
+              <Sparkles className="w-6 h-6 text-indigo-500" />
+              <span className="font-semibold">Student Developer</span>
+              <span className="text-gray-400">•</span>
+              <span className="font-semibold">Tech Enthusiast</span>
+              <Sparkles className="w-6 h-6 text-purple-500" />
+            </div>
 
-          <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-12 animate-fade-in animation-delay-400">
-            Passionate about creating innovative solutions and learning cutting-edge technologies. 
-            Currently pursuing BTech in Computer Science, exploring DevOps, Cloud Computing, and Full-Stack Development.
-          </p>
+            <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed">
+              Passionate about creating innovative solutions and learning cutting-edge technologies. 
+              Currently pursuing BTech in Computer Science, exploring DevOps, Cloud Computing, and Full-Stack Development.
+            </p>
+          </div>
 
           {/* Action Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16 animate-fade-in animation-delay-600">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
             <a
               href="/resume.pdf"
               download
-              className="inline-flex items-center px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-all duration-200 transform hover:scale-105 hover:shadow-lg"
+              className="group inline-flex items-center px-8 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white font-semibold rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-indigo-500/25"
             >
-              <Download className="w-5 h-5 mr-2" />
+              <Download className="w-5 h-5 mr-2 group-hover:animate-bounce" />
               Download Resume
             </a>
             
-            <div className="flex space-x-4">
+            <div className="flex space-x-3">
               <a
                 href="https://linkedin.com/in/yourusername"
-                className="inline-flex items-center px-6 py-3 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 font-medium rounded-lg border border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-200 transform hover:scale-105"
+                className="inline-flex items-center px-6 py-4 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 font-semibold rounded-2xl border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -68,7 +66,7 @@ const Hero = () => {
               
               <a
                 href="https://github.com/yourusername"
-                className="inline-flex items-center px-6 py-3 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 font-medium rounded-lg border border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-200 transform hover:scale-105"
+                className="inline-flex items-center px-6 py-4 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 font-semibold rounded-2xl border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -81,66 +79,16 @@ const Hero = () => {
           {/* Scroll Indicator */}
           <button
             onClick={scrollToAbout}
-            className="inline-flex flex-col items-center text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200 animate-bounce"
+            className="inline-flex flex-col items-center text-gray-500 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300 animate-bounce"
             aria-label="Scroll to about section"
           >
-            <span className="text-sm mb-2">Scroll to explore</span>
-            <ChevronDown className="w-6 h-6" />
+            <span className="text-sm font-medium mb-2">Scroll to explore</span>
+            <div className="w-8 h-8 border-2 border-current rounded-full flex items-center justify-center">
+              <ChevronDown className="w-4 h-4" />
+            </div>
           </button>
         </div>
       </div>
-
-      <style jsx>{`
-        @keyframes blob {
-          0% {
-            transform: translate(0px, 0px) scale(1);
-          }
-          33% {
-            transform: translate(30px, -50px) scale(1.1);
-          }
-          66% {
-            transform: translate(-20px, 20px) scale(0.9);
-          }
-          100% {
-            transform: translate(0px, 0px) scale(1);
-          }
-        }
-        .animate-blob {
-          animation: blob 7s infinite;
-        }
-        .animation-delay-2000 {
-          animation-delay: 2s;
-        }
-        .animation-delay-4000 {
-          animation-delay: 4s;
-        }
-        .animate-fade-in {
-          animation: fadeIn 0.8s ease-out forwards;
-          opacity: 0;
-        }
-        .animation-delay-200 {
-          animation-delay: 0.2s;
-        }
-        .animation-delay-400 {
-          animation-delay: 0.4s;
-        }
-        .animation-delay-600 {
-          animation-delay: 0.6s;
-        }
-        .animate-pulse-slow {
-          animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-        }
-        @keyframes fadeIn {
-          from {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-      `}</style>
     </section>
   );
 };
